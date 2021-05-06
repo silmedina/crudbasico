@@ -7,10 +7,10 @@ import {
 } from "react-router-dom";
 import Inicio from './components/Inicio';
 import ListarProductos from './components/ListarProductos.js';
-import AgregarProductos from './components/AgregarProducto';
+import AgregarProducto from './components/AgregarProducto';
 import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
          <ListarProductos></ListarProductos>
        </Route>
        <Route exact path='/productos/nuevo'>
-         <AgregarProductos></AgregarProductos>
+         <AgregarProducto></AgregarProducto>
        </Route>
      </Switch>
      <Footer></Footer>
