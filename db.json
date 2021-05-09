@@ -1,0 +1,46 @@
+{
+  "cafeteria": [
+    {
+      "nombreProducto": "cafe",
+      "precioProducto": 50,
+      "categoria": "bebidaCaliente",
+      "id": 1
+    },
+    {
+      "nombreProducto": "medialuna x unidad",
+      "precioProducto": 40,
+      "categoria": "dulce",
+      "id": 2
+    },
+    {
+      "nombreProducto": "licuado frutilla",
+      "precioProducto": "150",
+      "categoria": "fria",
+      "id": 3
+    },
+    {
+      "nombreProducto": "cafe",
+      "precioProducto": "100",
+      "categoria": "caliente",
+      "id": 4
+    },
+    {
+      "nombreProducto": "cafe",
+      "precioProducto": "200",
+      "categoria": "fria",
+      "id": 5
+    },
+    {
+      "nombreProducto": "te",
+      "precioProducto": "100",
+      "categoria": "caliente",
+      "id": 6
+    },
+    {
+      "nombreProducto": "torta",
+      "precioProducto": "200",
+      "categoria": "dulce",
+      "id": 7
+    }
+  ]
+}
