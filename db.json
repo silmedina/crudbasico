@@ -1,64 +1,16 @@
 {
   "cafeteria": [
     {
-      "nombreProducto": "cafe",
-      "precioProducto": 50,
-      "categoria": "bebidaCaliente",
+      "nombreProducto": "te de manzanilla",
+      "precioProducto": "200",
+      "categoria": "caliente",
       "id": 1
     },
     {
-      "nombreProducto": "medialuna x unidad",
-      "precioProducto": 40,
-      "categoria": "dulce",
-      "id": 2
-    },
-    {
-      "nombreProducto": "licuado frutilla",
+      "nombreProducto": "cortado en jarrita",
       "precioProducto": "150",
       "categoria": "fria",
-      "id": 3
-    },
-    {
-      "nombreProducto": "cafe",
-      "precioProducto": "100",
-      "categoria": "caliente",
-      "id": 4
-    },
-    {
-      "nombreProducto": "cafe",
-      "precioProducto": "200",
-      "categoria": "fria",
-      "id": 5
-    },
-    {
-      "nombreProducto": "te",
-      "precioProducto": "100",
-      "categoria": "caliente",
-      "id": 6
-    },
-    {
-      "nombreProducto": "torta",
-      "precioProducto": "200",
-      "categoria": "dulce",
-      "id": 7
-    },
-    {
-      "nombreProducto": "cafe",
-      "precioProducto": "245",
-      "categoria": "caliente",
-      "id": 8
-    },
-    {
-      "nombreProducto": "licuado",
-      "precioProducto": "100",
-      "categoria": "caliente",
-      "id": 9
-    },
-    {
-      "nombreProducto": "manzanilla",
-      "precioProducto": "50",
-      "categoria": "fria",
-      "id": 10
+      "id": 2
     }
   ]
 }
