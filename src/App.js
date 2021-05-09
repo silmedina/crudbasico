@@ -17,6 +17,7 @@ function App() {
   const URL = process.env.REACT_APP_API_URL
   useEffect(()=>{
     //llamar a la api
+    consultarAPI();
   },[]);
 
   const consultarAPI = async() =>{
@@ -46,7 +47,7 @@ function App() {
          <ListarProductos productos={productos}></ListarProductos>
        </Route>
        <Route exact path='/productos/nuevo'>
-         <AgregarProducto></AgregarProducto>
+         <AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>
        </Route>
      </Switch>
      <Footer></Footer>

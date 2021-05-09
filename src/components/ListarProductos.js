@@ -2,12 +2,14 @@ import React from "react";
 import { Container, ListGroup} from "react-bootstrap";
 import ItemProducto from "./ItemProducto";
 
-const ListarProductos = () => {
+const ListarProductos = (props) => {
   return (
     <Container>
       <h1 className="text-center my-5">Pagina listar Productos</h1>
       <ListGroup className='my-5'>
-       <ItemProducto></ItemProducto>
+          {
+              props.productos.map((producto)=> <ItemProducto producto={producto} key={producto.id}></ItemProducto>)
+          }
       </ListGroup>
     </Container>
   );
