@@ -1,16 +1,3 @@
 {
-  "cafeteria": [
-    {
-      "nombreProducto": "te de manzanilla",
-      "precioProducto": "200",
-      "categoria": "caliente",
-      "id": 1
-    },
-    {
-      "nombreProducto": "cortado en jarrita",
-      "precioProducto": "150",
-      "categoria": "fria",
-      "id": 2
-    }
-  ]
+  "cafeteria": []
 }
