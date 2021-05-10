@@ -11,6 +11,8 @@ import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect} from 'react' ;
+import EditarProducto from './components/EditarProducto.js';
+
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -48,6 +50,9 @@ function App() {
        </Route>
        <Route exact path='/productos/nuevo'>
          <AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>
+       </Route>
+       <Route exact path='/productos/editar'>
+         <EditarProducto></EditarProducto>
        </Route>
      </Switch>
      <Footer></Footer>
