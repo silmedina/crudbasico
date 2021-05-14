@@ -1,6 +1,7 @@
 import React from "react";
 import { ListGroup, Button, Badge } from "react-bootstrap";
 import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 const ItemProducto = (props) => {
   const eliminarProducto = (id) => {
@@ -50,9 +51,7 @@ const ItemProducto = (props) => {
         <Badge variant="success">$ {props.producto.precioProducto} </Badge>
       </p>
       <div>
-        <Button variant="warning" className="mr-3">
-          Editar
-        </Button>
+        <Link  className=" btn btn-warning mr-3 text-light" to={`/productos/editar/${props.producto.id}`}>Editar</Link>
         <Button
           variant="danger"
           onClick={() => eliminarProducto(props.producto.id)}

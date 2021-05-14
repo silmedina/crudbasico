@@ -1,3 +1,16 @@
 {
-  "cafeteria": []
+  "cafeteria": [
+    {
+      "nombreProducto": "cafe",
+      "precioProducto": "150",
+      "categoria": "caliente",
+      "id": 1
+    },
+    {
+      "nombreProducto": "dulce",
+      "precioProducto": "1",
+      "categoria": "dulce",
+      "id": 2
+    }
+  ]
 }
