@@ -1,14 +1,14 @@
 {
   "cafeteria": [
     {
-      "nombreProducto": "cafe",
-      "precioProducto": "150",
-      "categoria": "caliente",
+      "nombreProducto": "torta",
+      "precioProducto": "300",
+      "categoria": "dulce",
       "id": 1
     },
     {
-      "nombreProducto": "dulce",
-      "precioProducto": "1",
+      "nombreProducto": "jamon dulce",
+      "precioProducto": "100",
       "categoria": "dulce",
       "id": 2
     }

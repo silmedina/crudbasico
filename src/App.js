@@ -52,7 +52,7 @@ function App() {
          <AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>
        </Route>
        <Route exact path='/productos/editar/:id'>
-         <EditarProducto></EditarProducto>
+         <EditarProducto consultarAPI={consultarAPI}></EditarProducto>
        </Route>
      </Switch>
      <Footer></Footer>

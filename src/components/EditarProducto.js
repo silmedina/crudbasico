@@ -1,10 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react';
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
-import {useParams} from 'react-router-dom';
+import {useParams, withRouter} from 'react-router-dom';
+import {campoRequerido, rangoPrecio} from './common/helpers'
 
 
-const EditarProducto = () => {
+const EditarProducto = (props) => {
     const {id} = useParams();
     
     //variables useRef
@@ -14,6 +15,8 @@ const EditarProducto = () => {
     //creo los state
     const [producto, setProducto] = useState({});
     const [categoria, setCategoria] = useState('');
+    const [error, setError] = useState(false);
+    const URL = process.env.REACT_APP_API_URL + '/'+ id;
     
     useEffect(()=>{
       consultarProducto();
@@ -21,7 +24,6 @@ const EditarProducto = () => {
 
     const consultarProducto = async() => {
       try{
-        const URL = process.env.REACT_APP_API_URL + '/'+ id;
         const respuesta = await fetch(URL);
         console.log(respuesta);
         if(respuesta.status === 200){
@@ -44,8 +46,57 @@ const EditarProducto = () => {
        setCategoria(e.target.value);
     }
 
-    const handleSubmit = ()=>{
+    const handleSubmit = async (e)=>{
+      e.preventDefault();
+      console.log(nombreProductoRef)
+      console.log(nombreProductoRef.current)
+      console.log(nombreProductoRef.current.value)
 
+      // revisar el valor de la categoria
+      let categoriaModificada = (categoria === '')?(producto.categoria):(categoria);
+      //validar los datos
+      if(campoRequerido(nombreProductoRef.current.value) && rangoPrecio(parseFloat(precioProductoRef.current.value)) && campoRequerido(categoriaModificada)){
+          //si esta todo bien envio request a mi API
+          setError(false); 
+          try{
+            const productoModificado = {
+              nombreProducto : nombreProductoRef.current.value,
+              precioProducto : precioProductoRef.current.value,
+              categoria : categoriaModificada
+            }
+
+            const respuesta = await fetch(URL,{
+              method: "PUT",
+              headers:{"Content-Type":"application/json"},
+              body: JSON.stringify(productoModificado)
+            })
+            if(respuesta.status === 200){
+              //mostrar un cartel de producto modificado
+              Swal.fire(
+                "Producto modificado!",
+                "El producto seleccionado fue modificado correctamente!",
+                "success"
+              );
+              //actualizar los datos de los productos
+              props.consultarAPI();
+              props.history.push('/productos');
+            }
+
+          }catch(error){
+            console.log(error);
+          }
+      }else{
+         //si falla la validacion mostrar un cartel de error
+         setError(true);
+      }
+      
+      
+      
+     
+
+      
+
+      
     };
     
     return (
@@ -115,13 +166,16 @@ const EditarProducto = () => {
         <Button variant="danger" type="submit" className="w-100 my-5">
           Guardar
         </Button>
-        {/* {error === true ? ( */}
-          {/* <Alert variant="warning">Todos los campos son obligatorios</Alert> */}
-        {/* ) : null} */}
+        { 
+            error === true ?
+              <Alert variant="warning">Todos los campos son obligatorios</Alert>: 
+              null
+          
+      }
       </Form>
     </Container>
     );
 };
 
-export default EditarProducto;
+export default withRouter(EditarProducto);
 
