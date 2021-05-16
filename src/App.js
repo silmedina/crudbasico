@@ -12,6 +12,7 @@ import Footer from './components/common/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect} from 'react' ;
 import EditarProducto from './components/EditarProducto.js';
+import Error404 from './components/Error404';
 
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
        </Route>
        <Route exact path='/productos/editar/:id'>
          <EditarProducto consultarAPI={consultarAPI}></EditarProducto>
+       </Route>
+       <Route path='*'>
+         <Error404></Error404>
        </Route>
      </Switch>
      <Footer></Footer>
